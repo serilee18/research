@@ -1,15 +1,14 @@
 import torch
 import torch.nn as nn
-import torch.nn as nn
-import torch.nn as nn
-import torch.nn as nn
-import numpy as np
 import torch.optim as optim
 from torch.autograd import Variable
+
+import numpy as np
+from random import randint
+
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from random import randint
 
 train = []
 labels = []
@@ -72,6 +71,9 @@ for epoch in range(epochs):
 
 output = classifier(Variable(torch.FloatTensor([0.9, 0.9])).view(1, -1))
 print(output)
+
+#If you want to know the result index, add 
+#print('output {}'.format(np.argmax(output.data.numpy())))
 
 #SAVE checkpoint
 PATH = 'classifier.pth'
