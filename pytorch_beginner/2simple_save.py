@@ -72,10 +72,9 @@ for epoch in range(epochs):
 output = classifier(Variable(torch.FloatTensor([0.9, 0.9])).view(1, -1))
 print(output)
 
-#If you want to know the result index, add 
-#print('output {}'.format(np.argmax(output.data.numpy())))
+#If you want to know the result category, add 
+print('output {}'.format(np.argmax(output.data.numpy())))
 
 #SAVE checkpoint
 PATH = 'classifier.pth'
 torch.save(classifier.state_dict(), PATH)
-
